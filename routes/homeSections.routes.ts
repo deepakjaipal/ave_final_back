@@ -1,4 +1,4 @@
-import { Router } from 'express';
+import express from "express";
 import {
   getPublicHomeSections,
   getAllHomeSections,
@@ -7,7 +7,7 @@ import {
   deleteHomeSection,
 } from '../controllers/homeSectionsController.js';
 
-const router = Router();
+const router = express.Router();  // ✅ Changed from Router() to express.Router()
 
 /* ===============================
    PUBLIC (Frontend)
