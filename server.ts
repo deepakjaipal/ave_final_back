@@ -27,7 +27,7 @@ import settingsRoutes from "./routes/settingsRoutes.js";
 import importRoutes from "./routes/importRoutes.js";
 import bannerRoutes from "./routes/bannerRoutes.js";
 import logger from "./utils/logger.js";
-import homeSectionsRoutes from './routes/homeSections.routes.js';
+import homeSectionsRoutes from './routes/homeSections.routes';
 import collectionsRoutes from './routes/collections.js';
 
 
