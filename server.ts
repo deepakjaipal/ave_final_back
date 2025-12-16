@@ -27,6 +27,8 @@ import settingsRoutes from "./routes/settingsRoutes.js";
 import importRoutes from "./routes/importRoutes.js";
 import bannerRoutes from "./routes/bannerRoutes.js";
 import logger from "./utils/logger.js";
+import homeSectionsRoutes from './routes/homeSections.routes.js';
+import collectionsRoutes from './routes/collections.js';
 
 
 const app = express();
@@ -139,12 +141,13 @@ app.use("/api/reports", reportRoutes);
 app.use("/api/settings", settingsRoutes);
 app.use("/api/import", importRoutes);
 app.use("/api/banners", bannerRoutes);
-
+app.use('/api/home-sections', homeSectionsRoutes);
+app.use('/api/collections', collectionsRoutes);
 // Error handling middleware
 app.use(notFound);
 app.use(errorHandler);
 
-const PORT = parseInt(process.env.PORT || "5001");
+const PORT = 5000;
 
 // Start server
 const server = app.listen(PORT, "0.0.0.0", () => {

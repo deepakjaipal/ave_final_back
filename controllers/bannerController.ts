@@ -111,6 +111,7 @@ const createBanner = asyncHandler(async (req, res) => {
     subtitle,
     description,
     image,
+    mobileImage,
     badge,
     link,
     buttonText,
@@ -142,6 +143,7 @@ const createBanner = asyncHandler(async (req, res) => {
     subtitle,
     description,
     image,
+    mobileImage,
     badge,
     link,
     buttonText,
@@ -164,6 +166,7 @@ const updateBanner = asyncHandler(async (req, res) => {
     subtitle,
     description,
     image,
+    mobileImage,
     badge,
     link,
     buttonText,
@@ -196,6 +199,9 @@ const updateBanner = asyncHandler(async (req, res) => {
   banner.subtitle = subtitle !== undefined ? subtitle : banner.subtitle;
   banner.description = description !== undefined ? description : banner.description;
   banner.image = image || banner.image;
+  if (mobileImage !== undefined) {
+  banner.mobileImage = mobileImage; 
+}
   banner.badge = badge !== undefined ? badge : banner.badge;
   banner.link = link !== undefined ? link : banner.link;
   banner.buttonText = buttonText !== undefined ? buttonText : banner.buttonText;

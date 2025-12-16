@@ -5,6 +5,7 @@ export interface IBanner extends Document {
   subtitle?: string;
   description?: string;
   image: string;
+  mobileImage: string;
   badge?: string;
   link?: string;
   buttonText?: string;
@@ -32,6 +33,10 @@ const bannerSchema = new Schema<IBanner>(
       trim: true,
     },
     image: {
+      type: String,
+      required: true,
+    },
+     mobileImage: {
       type: String,
       required: true,
     },
