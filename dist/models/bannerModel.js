@@ -17,6 +17,10 @@ const bannerSchema = new Schema({
         type: String,
         required: true,
     },
+    mobileImage: {
+        type: String,
+        required: true,
+    },
     badge: {
         type: String,
         trim: true,

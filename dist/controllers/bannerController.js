@@ -93,7 +93,7 @@ const getBannerById = asyncHandler(async (req, res) => {
 // @route   POST /api/banners
 // @access  Private/Admin
 const createBanner = asyncHandler(async (req, res) => {
-    const { title, subtitle, description, image,mobileImage, badge, link, buttonText, order, isActive, startDate, endDate, } = req.body;
+    const { title, subtitle, description, image, mobileImage, badge, link, buttonText, order, isActive, startDate, endDate, } = req.body;
     // Validate required fields
     if (!title || !image) {
         res.status(400);
@@ -149,7 +149,9 @@ const updateBanner = asyncHandler(async (req, res) => {
     banner.subtitle = subtitle !== undefined ? subtitle : banner.subtitle;
     banner.description = description !== undefined ? description : banner.description;
     banner.image = image || banner.image;
-    banner.mobileImage = mobileImage || banner.mobileImage;
+    if (mobileImage !== undefined) {
+        banner.mobileImage = mobileImage;
+    }
     banner.badge = badge !== undefined ? badge : banner.badge;
     banner.link = link !== undefined ? link : banner.link;
     banner.buttonText = buttonText !== undefined ? buttonText : banner.buttonText;

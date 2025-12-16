@@ -117,7 +117,7 @@ app.use('/api/collections', collectionsRoutes);
 // Error handling middleware
 app.use(notFound);
 app.use(errorHandler);
-const PORT = parseInt(process.env.PORT || "5001");
+const PORT = 5000;
 // Start server
 const server = app.listen(PORT, "0.0.0.0", () => {
     logger.info(`🚀 Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
