@@ -147,15 +147,13 @@ app.use('/api/collections', collectionsRoutes);
 app.use(notFound);
 app.use(errorHandler);
 
-const PORT = 5000;
+const PORT = Number(process.env.PORT) || 5000;
 
 // Start server
 const server = app.listen(PORT, "0.0.0.0", () => {
-
   logger.info(
     `🚀 Server running in ${process.env.NODE_ENV} mode on port ${PORT}`
   );
-  logger.info(`📊 Health check available at http://localhost:${PORT}/health`);
 });
 
 // Graceful shutdown handler
