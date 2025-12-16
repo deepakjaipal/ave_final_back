@@ -5,7 +5,7 @@
   "main": "dist/server.js",
   "scripts": {
     "start": "node dist/server.js",
-    "dev": "nodemon --exec \"tsx server.ts\"",
+    "dev": "ts-node src/server.ts",
     "build": "tsc",
     "postbuild": "cp package.json dist/",
     "lint": "eslint . --ext .ts",
