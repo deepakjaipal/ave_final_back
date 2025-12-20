@@ -129,7 +129,16 @@ const getUsers = asyncHandler(async (req: Request, res: Response) => {
     },
   });
 });
+const getUserById = asyncHandler(async (req: Request, res: Response) => {
+  const user = await User.findById(req.params.id).select('-password');
 
+  if (!user) {
+    res.status(404);
+    throw new Error('User not found');
+  }
+
+  res.json(user);
+});
 // @desc    Update user
 // @route   PUT /api/users/:id
 // @access  Private/Admin
@@ -237,4 +246,4 @@ const getUserStats = asyncHandler(async (req: Request, res: Response) => {
   });
 });
 
-export { authUser, registerUser, getUserProfile, getUsers, updateUser, deleteUser, getUserStats };
+export { authUser, registerUser, getUserProfile, getUsers, updateUser, deleteUser, getUserStats, getUserById };
