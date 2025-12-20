@@ -129,6 +129,13 @@ const getUsers = asyncHandler(async (req: Request, res: Response) => {
     },
   });
 });
+
+// @desc    Update user
+// @route   PUT /api/users/:id
+// @access  Private/Admin
+// @desc    Get user by ID
+// @route   GET /api/users/:id
+// @access  Private/Admin
 const getUserById = asyncHandler(async (req: Request, res: Response) => {
   const user = await User.findById(req.params.id).select('-password');
 
@@ -139,9 +146,7 @@ const getUserById = asyncHandler(async (req: Request, res: Response) => {
 
   res.json(user);
 });
-// @desc    Update user
-// @route   PUT /api/users/:id
-// @access  Private/Admin
+
 const updateUser = asyncHandler(async (req: Request, res: Response) => {
   const { name, email, businessName, phone, role, status } = req.body;
 
